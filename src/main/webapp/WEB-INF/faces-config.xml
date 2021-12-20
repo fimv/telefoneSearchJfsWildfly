@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ 
+ 
+ <application/>
+ <managed-bean>
+ 	<description>Update Registration</description>
+ 	<managed-bean-name>updateBean</managed-bean-name>
+ 	<managed-bean-class>bean.UpdateBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>registrationBean</managed-bean-name>
+ 	<managed-bean-class>bean.RegistrationBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>loginBean</managed-bean-name>
+ 	<managed-bean-class>bean.LoginBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>personBean</managed-bean-name>
+ 	<managed-bean-class>bean.PersonBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+  <managed-bean>
+ 	<managed-bean-name>searchBean</managed-bean-name>
+ 	<managed-bean-class>bean.SearchBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+</faces-config>

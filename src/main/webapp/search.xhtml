@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Person Search</title>
+	</h:head>
+	<h:body>
+	
+		<p:tooltip />
+		
+		<p:messages id="messages" showDetail="true" closable="true" style="margin-top:30px;">
+		    <p:autoUpdate />
+		</p:messages>		
+	
+		<h:form>
+			<p:panel id="panel" header="Person Search. Поиск по базе" style="margin-top:30px;">
+			
+				<p:panelGrid id="grid" columns="2" cellpadding="5">
+				
+					<p:outputLabel for="text" value="Search Text"/>
+					<p:inputText id="text" value="#{searchBean.searchText}" required="true" onchange="#{searchBean.limparResultado()}"/>						
+					
+				</p:panelGrid>
+				
+				<b:commandButton value="Search" action="#{searchBean.listarPessoas()}" ajax="true" look="success" 
+					style="width:100px; margin-top:10px;" update="grid" action-listener="#{searchBean.info()}" />				
+				
+				<br />
+				<b:commandButton value="Out" action="#{searchBean.irParaLogout()}" ajax="true" look="danger" style="width:200px; margin-top:10px;" />
+				 
+			</p:panel>
+			
+			<p:separator />
+			
+			<h:form>
+				<h:outputLabel value="#{searchBean.resulstado}"/>
+			</h:form>
+			
+		</h:form>
+		
+	</h:body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Persons</title>
+	</h:head>
+	<h:body>
+	
+		<h:form>
+			<p:panel  id="panel_3" header="List of Persons" style="margin-top:30px;">
+				<p:panelGrid columns="2" cellpadding="5">
+				
+					<p:dataTable id="tabela-2" value="#{personBean.listarPessoas()}" var="person" resizableColumns="true" liveResize="true" resizeMode="expand">
+						
+						<p:column headerText="Nº">
+							<p:outputLabel value="#{person.id}" />
+						</p:column>
+						
+						<p:column headerText="Name">
+							<p:outputLabel value="#{person.name}" />
+						</p:column>
+						
+						<p:column headerText="E-mail">
+							<p:outputLabel value="#{person.email}" />
+						</p:column>
+						
+						<p:column headerText="DDD">
+							<p:outputLabel value="#{person.telefone[0]}" />
+						</p:column>
+						
+						<p:column headerText="Númer">
+							<p:outputLabel value="#{person.telefone[1]}" />
+						</p:column>
+						
+						<p:column headerText="Tipo">
+							<p:outputLabel value="#{person.telefone[2]}" />
+						</p:column>
+						
+						<p:column headerText="Logado">
+							<p:outputLabel value="#{person.login}" />
+						</p:column>
+						
+						<p:column headerText="Delete">
+							<b:commandButton value="Delete #{person.id}" action="#{personBean.deletarPessoa(person.id)}" ajax="true" look="danger" style="width:112px;" />
+						</p:column>
+						
+						<p:column headerText="Logout">
+							<b:commandButton value="Logout #{person.id}" action="#{loginBean.irParaLogout(person.id)}" ajax="true" look="primary" style="width:112px;" />
+						</p:column>
+						
+					</p:dataTable>
+					
+				</p:panelGrid>
+				
+				<b:commandButton value="Registration" action="#{personBean.irParaCadastro()}" ajax="true" look="primary" style="width:200px; margin-top:10px;"/>
+				<br />
+				<b:commandButton value="Update" action="#{personBean.irParaAtualizar()}" ajax="true" look="info" style="width:200px; margin-top:10px;" />
+				
+			</p:panel>
+		</h:form>
+		
+	</h:body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Login</title>
+	</h:head>
+	<h:body>
+	
+		<h:form>
+			<p:panel id="panel_2" header="Login" style="margin-top:30px;">
+			    <p:messages id="messages" showDetail="true" closable="true">
+			        <p:autoUpdate />
+			    </p:messages>
+				<p:panelGrid columns="2" cellpadding="5">
+
+				<p:outputLabel for="name" value="Name"/>
+					<p:inputText id="name" value="#{loginBean.name}" required="true"/>
+					
+					<p:outputLabel for="password" value="Password"/>
+					<p:password id="password" value="#{loginBean.password}" required="true"/>
+					
+				</p:panelGrid>
+				
+				<b:commandButton value="Login" action="#{loginBean.irParaPessoas()}" ajax="true" look="success" style="width:100px; margin-top:10px;"  />
+				
+			</p:panel>
+		</h:form>
+	
+	</h:body>
+</html>
